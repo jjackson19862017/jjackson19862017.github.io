@@ -213,42 +213,12 @@ function animate() {
         tl.to('.main', {autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power2.out'});
     }
 
-    // Section title clip-path wipe on scroll
-    document.querySelectorAll('.section').forEach(section => {
-        const title = section.querySelector('.section__title');
-        if (!title) return;
-        gsap.from(title, {
-            scrollTrigger: {trigger: section, start: 'top 82%'},
-            clipPath: 'inset(0 100% 0 0)',
+    // Whole-card entrance on scroll (skip summary — it's above the fold)
+    document.querySelectorAll('.section:not(.summary-section)').forEach(section => {
+        gsap.from(section, {
+            scrollTrigger: {trigger: section, start: 'top 88%'},
+            y: 48, autoAlpha: 0, scale: 0.985,
             duration: 0.7, ease: 'power3.out',
-        });
-    });
-
-    // Experience — slide in from right with overshoot
-    document.querySelectorAll('.experience-item').forEach((item, i) => {
-        gsap.from(item, {
-            scrollTrigger: {trigger: item, start: 'top 88%'},
-            x: 30, autoAlpha: 0,
-            duration: 0.6, ease: 'back.out(1.3)', delay: i * 0.04,
-        });
-    });
-
-    // Portfolio — stagger with slight clockwise rotation
-    document.querySelectorAll('.portfolio-item').forEach((item, i) => {
-        gsap.from(item, {
-            scrollTrigger: {trigger: item, start: 'top 90%'},
-            y: 28, autoAlpha: 0, rotation: 1.5,
-            duration: 0.55, ease: 'power3.out', delay: i * 0.04,
-        });
-    });
-
-
-    // Education — fade up with slight rotation
-    document.querySelectorAll('.education-item').forEach((item, i) => {
-        gsap.from(item, {
-            scrollTrigger: {trigger: item, start: 'top 88%'},
-            y: 20, autoAlpha: 0, rotation: 0.8,
-            duration: 0.5, ease: 'power3.out', delay: i * 0.06,
         });
     });
 

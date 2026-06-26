@@ -242,15 +242,6 @@ function animate() {
         });
     });
 
-    // Skill tags — all groups triggered together when section enters view
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) {
-        gsap.from(skillsSection.querySelectorAll('.skill-tag'), {
-            scrollTrigger: {trigger: skillsSection, start: 'top 85%'},
-            scale: 0.75, autoAlpha: 0, rotation: -4,
-            duration: 0.35, ease: 'back.out(2)', stagger: 0.025,
-        });
-    }
 
     // Education — fade up with slight rotation
     document.querySelectorAll('.education-item').forEach((item, i) => {

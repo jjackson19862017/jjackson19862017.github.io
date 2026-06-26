@@ -167,13 +167,12 @@ function render(data) {
     });
 }
 
-function splitNameIntoChars() {
+function splitNameIntoWords() {
     const el = document.getElementById('profile-name');
     if (!el) return;
-    el.innerHTML = el.textContent.split('').map(ch =>
-        ch === ' ' ? '<span style="display:inline-block;width:0.35em"> </span>'
-                   : `<span class="char" style="display:inline-block">${ch}</span>`
-    ).join('');
+    el.innerHTML = el.textContent.trim().split(' ').map(word =>
+        `<span class="word" style="display:inline-block;white-space:nowrap">${word}</span>`
+    ).join(' ');
 }
 
 function animate() {
@@ -183,10 +182,10 @@ function animate() {
     gsap.set('.main', {autoAlpha: 0, scale: 0.97});
 
     if (!isMobile) {
-        splitNameIntoChars();
+        splitNameIntoWords();
 
         gsap.set('.sidebar', {clipPath: 'inset(0 100% 0 0)'});
-        gsap.set('.profile__name .char', {autoAlpha: 0, y: 24, rotateX: -90});
+        gsap.set('.profile__name .word', {autoAlpha: 0, y: 24, rotateX: -90});
         gsap.set('.profile__title', {autoAlpha: 0, x: -10});
         gsap.set('.sidebar__nav a', {autoAlpha: 0, clipPath: 'inset(0 100% 0 0)'});
         gsap.set('.contact__item', {autoAlpha: 0, y: 12});
@@ -194,9 +193,9 @@ function animate() {
 
         tl
             .to('.sidebar', {clipPath: 'inset(0 0% 0 0)', duration: 0.75, ease: 'power4.inOut'})
-            .to('.profile__name .char', {
+            .to('.profile__name .word', {
                 autoAlpha: 1, y: 0, rotateX: 0,
-                duration: 0.55, stagger: 0.028, ease: 'back.out(2)',
+                duration: 0.55, stagger: 0.1, ease: 'back.out(2)',
                 transformOrigin: '50% 100%',
             }, '-=0.2')
             .to('.profile__title', {autoAlpha: 1, x: 0, duration: 0.4, ease: 'power2.out'}, '-=0.15')

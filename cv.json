@@ -1,0 +1,157 @@
+{
+  "profile": {
+    "name": "Stephen James Jackson",
+    "title": "Web Developer",
+    "summary": "A hard working and self-motivated web developer with over four years of commercial experience building, maintaining, and deploying websites and applications. Passionate about learning new technologies and solving problems independently. Currently looking to transition into a larger company to further develop my skills and broaden my knowledge. Outside of work, I actively maintain a home lab environment running Docker, Jellyfin, Home Assistant, and self-hosted services accessible via Cloudflare tunnels — driven by a genuine interest in infrastructure, networking, and continuous self-improvement.",
+    "contact": {
+      "email": "moc.duolci@8noskcajjs",
+      "phone": "07555 966431",
+      "linkedin": "linkedin.com/in/stephenjamesjackson",
+      "location": "Thornton-Cleveleys, Lancashire"
+    }
+  },
+  "experience": [
+    {
+      "company": "Think!Creative",
+      "title": "Web Developer",
+      "dates": "June 2021 – Present",
+      "bullets": [
+        "Set up, migrate, and monitor web hosting servers for multiple clients",
+        "Maintain and build new client websites, liaising directly with clients on requirements and providing training",
+        "Built a full Secret Santa application from scratch to replace the existing one",
+        "Developing a combined time-keeping and project overview application",
+        "Manage VPN, email, and network services across the business",
+        "Provide technical support for colleagues including VPN setup, Mac troubleshooting, and managing backups for the office QNAP server",
+        "Handle client support tickets end-to-end via email, phone, and video call"
+      ]
+    },
+    {
+      "company": "Shard Riverside Inn",
+      "title": "Duty Manager & Stock Taker",
+      "dates": "Mar 2017 – June 2021",
+      "bullets": [
+        "Progressed from waiter to three successive promotions: Bar & Accommodations Manager, Duty Manager, and Stock Taker",
+        "Designed and implemented a revenue dashboard for the owner using the ePos system, providing at-a-glance visibility across multiple hotels",
+        "Took over stock-taking responsibilities for both establishments, reducing costs previously paid to external stock takers",
+        "Managed staff, accommodation bookings, and day-to-day hotel operations"
+      ]
+    },
+    {
+      "company": "Self-directed Learning (Furlough Period)",
+      "title": "Full-stack Web Development",
+      "dates": "2020",
+      "bullets": [
+        "Completed a Full-stack Web Development diploma with Code Institute, graduating with Second Class Honours",
+        "Deepened knowledge of PHP, PHP OOP, HTML, CSS, and JavaScript during this period"
+      ]
+    }
+  ],
+  "skills": {
+    "Languages": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "PHP OOP"
+    ],
+    "Frameworks & CMS": [
+      "Laravel",
+      "Statamic",
+      "Filament PHP",
+      "Livewire",
+      "Tailwind CSS",
+      "Alpine.js"
+    ],
+    "Tools & Platforms": [
+      "Git",
+      "GitHub",
+      "Vite",
+      "npm",
+      "Plesk",
+      "Cloudflare",
+      "Command Line (UNIX/DOS)"
+    ],
+    "Operating Systems": [
+      "macOS (primary)",
+      "Windows",
+      "Linux"
+    ],
+    "Home Lab": [
+      "Docker",
+      "NAS (self-hosted)",
+      "Home Assistant",
+      "Jellyfin (self-hosted media)",
+      "Virtual Machines",
+      "Cloudflare Tunnels",
+      "VPN",
+      "Network Management"
+    ]
+  },
+  "portfolio": [
+    {
+      "name": "Think!Creative",
+      "url": "https://thinkcreative.uk",
+      "tech": "Statamic",
+      "description": "Agency website for Think!Creative. Redesigned and migrated from WordPress to Statamic."
+    },
+    {
+      "name": "Bidca",
+      "url": "https://bidca.co.uk",
+      "tech": "Statamic",
+      "description": "Corporate website built from a supplied design, implemented in Statamic."
+    },
+    {
+      "name": "Climavent",
+      "url": "https://climavent.co.uk",
+      "tech": "Statamic",
+      "description": "Ventilation specialist website. Redesigned and migrated from WordPress to Statamic."
+    },
+    {
+      "name": "RBSL",
+      "url": "https://rbsl.com",
+      "tech": "Statamic",
+      "description": "Defence technology company website. Ongoing maintenance and feature development built on Statamic."
+    },
+    {
+      "name": "ESG Global Client Portal",
+      "url": "https://client.esgglobal.com",
+      "tech": "Statamic",
+      "description": "Client portal for ESG Global, an international energy software company. Maintained and updated on Statamic."
+    },
+    {
+      "name": "James Halstead",
+      "url": "https://jameshalstead.com",
+      "tech": "Statamic",
+      "description": "Website for James Halstead plc, a global commercial flooring manufacturer. Maintained and updated."
+    },
+    {
+      "name": "King Carp Competitions",
+      "url": "https://kingcarpcompetitions.co.uk",
+      "tech": "Filament PHP",
+      "description": "Competition management platform for carp fishing events. Built from scratch using Filament PHP."
+    },
+    {
+      "name": "Secret Santa",
+      "url": "https://santa.thinkcreative.uk",
+      "tech": "Filament PHP",
+      "description": "Internal Secret Santa application built from scratch to replace the previous system, using Filament PHP."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Code Institute",
+      "qualification": "Fullstack Web Developer — Second Class Honours",
+      "dates": "2020"
+    },
+    {
+      "institution": "Open University",
+      "qualification": "Book Keeping Level 1 — Distinction",
+      "dates": ""
+    },
+    {
+      "institution": "Milton Keynes College",
+      "qualification": "Horticulture Level 2 — Distinction",
+      "dates": ""
+    }
+  ]
+}

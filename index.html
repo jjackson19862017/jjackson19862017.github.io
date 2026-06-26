@@ -1,4 +1,175 @@
 <!DOCTYPE html>
-<html>
-<body><h1>Coming soon</h1></body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stephen Jackson — Web Developer</title>
+    <meta name="description"
+          content="CV of Stephen James Jackson, a web developer based in Lancashire with experience building and maintaining websites using PHP, Laravel, Statamic, and modern JavaScript."/>
+    <meta name="author" content="Stephen James Jackson"/>
+    <meta name="robots" content="index, follow"/>
+
+    <!-- Open Graph (LinkedIn, Slack, etc.) -->
+    <meta property="og:type" content="profile"/>
+    <meta property="og:title" content="Stephen Jackson — Web Developer"/>
+    <meta property="og:description"
+          content="Web developer based in Lancashire. PHP, Laravel, Statamic, JavaScript. Available for new opportunities."/>
+    <meta property="og:url" content="https://jackoripo.uk"/>
+    <meta property="og:image" content="https://jackoripo.uk/stephen.webp"/>
+    <meta property="og:image:alt" content="Stephen James Jackson — Web Developer"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://jackoripo.uk/stephen.webp"/>
+    <meta property="profile:first_name" content="Stephen"/>
+    <meta property="profile:last_name" content="Jackson"/>
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Stephen James Jackson",
+            "jobTitle": "Web Developer",
+            "url": "https://jackoripo.uk",
+            "email": "sjjackson8@icloud.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Thornton-Cleveleys",
+                "addressRegion": "Lancashire",
+                "addressCountry": "GB"
+            },
+            "sameAs": [
+                "https://github.com/jjackson19862017",
+                "https://www.linkedin.com/in/stephenjamesjackson/"
+            ],
+            "knowsAbout": [
+                "PHP",
+                "Laravel",
+                "Statamic",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "Tailwind CSS",
+                "Git",
+                "Web Development"
+            ]
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- Mobile top bar -->
+<div class="topbar">
+    <button class="topbar__hamburger" id="menu-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+    <button class="topbar__theme" id="theme-toggle-mobile" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+</div>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="layout" id="app">
+    <aside class="sidebar">
+        <div class="sidebar__inner">
+            <div class="profile">
+                <h1 class="profile__name" id="profile-name"></h1>
+                <p class="profile__title" id="profile-title"></p>
+            </div>
+
+            <nav class="sidebar__nav">
+                <a href="#experience">Experience</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+            </nav>
+
+            <div class="contact" id="contact-block"></div>
+
+            <div class="sidebar__footer">
+                <div class="last-updated" id="last-updated"></div>
+
+                <a href="#" class="download-btn" id="download-btn" aria-label="Download CV">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download CV
+                </a>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <span class="theme-toggle__label">Light mode</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <section class="section summary-section">
+            <p class="summary" id="summary-text"></p>
+        </section>
+
+        <section class="section" id="experience">
+            <h2 class="section__title">Experience</h2>
+            <div id="experience-list"></div>
+        </section>
+
+        <section class="section" id="portfolio">
+            <h2 class="section__title">Portfolio</h2>
+            <div id="portfolio-grid"></div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <div id="skills-grid"></div>
+        </section>
+
+        <section class="section" id="education">
+            <h2 class="section__title">Education</h2>
+            <div id="education-list"></div>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>

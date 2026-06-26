@@ -405,6 +405,7 @@ html[data-theme="dark"] .icon-sun {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
+    perspective: 1000px;
 }
 
 .portfolio-item {
@@ -414,13 +415,14 @@ html[data-theme="dark"] .icon-sun {
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 1.1rem 1.25rem;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .portfolio-item:hover {
     border-color: var(--border-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.12);
 }
 
 .portfolio-item__header {

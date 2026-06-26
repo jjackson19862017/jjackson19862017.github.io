@@ -167,70 +167,117 @@ function render(data) {
     });
 }
 
+function splitNameIntoChars() {
+    const el = document.getElementById('profile-name');
+    if (!el) return;
+    el.innerHTML = el.textContent.split('').map(ch =>
+        ch === ' ' ? '<span style="display:inline-block;width:0.35em"> </span>'
+                   : `<span class="char" style="display:inline-block">${ch}</span>`
+    ).join('');
+}
+
 function animate() {
     const isMobile = window.innerWidth <= 768;
     const tl = gsap.timeline({defaults: {ease: 'power3.out'}});
 
-    gsap.set('.main', {autoAlpha: 0, y: 30});
+    gsap.set('.main', {autoAlpha: 0, scale: 0.97});
 
     if (!isMobile) {
-        gsap.set('.sidebar', {x: -280});
-        gsap.set('.profile__name, .profile__title', {autoAlpha: 0, y: 8});
-        gsap.set('.sidebar__nav a, .contact__item, .sidebar__footer', {autoAlpha: 0, x: -12});
+        splitNameIntoChars();
+
+        gsap.set('.sidebar', {clipPath: 'inset(0 100% 0 0)'});
+        gsap.set('.profile__name .char', {autoAlpha: 0, y: 24, rotateX: -90});
+        gsap.set('.profile__title', {autoAlpha: 0, x: -10});
+        gsap.set('.sidebar__nav a', {autoAlpha: 0, clipPath: 'inset(0 100% 0 0)'});
+        gsap.set('.contact__item', {autoAlpha: 0, y: 12});
+        gsap.set('.sidebar__footer', {autoAlpha: 0, y: 8});
 
         tl
-            .to('.sidebar', {x: 0, duration: 0.7, ease: 'power3.out'})
-            .to('.profile__name', {autoAlpha: 1, y: 0, duration: 0.5}, '-=0.1')
-            .to('.profile__title', {autoAlpha: 1, y: 0, duration: 0.4}, '-=0.3')
-            .to('.sidebar__nav a', {autoAlpha: 1, x: 0, duration: 0.4, stagger: 0.07}, '-=0.2')
-            .to('.contact__item', {autoAlpha: 1, x: 0, duration: 0.4, stagger: 0.06}, '-=0.1')
-            .to('.sidebar__footer', {autoAlpha: 1, x: 0, duration: 0.4}, '-=0.1')
-            .to('.main', {autoAlpha: 1, y: 0, duration: 0.7, ease: 'power2.out'}, '-=0.1');
+            .to('.sidebar', {clipPath: 'inset(0 0% 0 0)', duration: 0.75, ease: 'power4.inOut'})
+            .to('.profile__name .char', {
+                autoAlpha: 1, y: 0, rotateX: 0,
+                duration: 0.55, stagger: 0.028, ease: 'back.out(2)',
+                transformOrigin: '50% 100%',
+            }, '-=0.2')
+            .to('.profile__title', {autoAlpha: 1, x: 0, duration: 0.4, ease: 'power2.out'}, '-=0.15')
+            .to('.sidebar__nav a', {
+                autoAlpha: 1, clipPath: 'inset(0 0% 0 0)',
+                duration: 0.4, stagger: 0.07, ease: 'power3.out',
+            }, '-=0.2')
+            .to('.contact__item', {
+                autoAlpha: 1, y: 0,
+                duration: 0.5, stagger: 0.07, ease: 'back.out(1.6)',
+            }, '-=0.15')
+            .to('.sidebar__footer', {autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out'}, '-=0.2')
+            .to('.main', {autoAlpha: 1, scale: 1, duration: 0.7, ease: 'power2.out'}, '-=0.3');
     } else {
-        tl.to('.main', {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out'});
+        tl.to('.main', {autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power2.out'});
     }
 
-    // Summary
-
-    // Sections on scroll
+    // Section title clip-path wipe on scroll
     document.querySelectorAll('.section').forEach(section => {
         const title = section.querySelector('.section__title');
         if (!title) return;
         gsap.from(title, {
             scrollTrigger: {trigger: section, start: 'top 82%'},
-            duration: 0.6, y: 18, opacity: 0, ease: 'power3.out',
+            clipPath: 'inset(0 100% 0 0)',
+            duration: 0.7, ease: 'power3.out',
         });
     });
 
-    // Portfolio items
-    document.querySelectorAll('.portfolio-item').forEach((item, i) => {
-        gsap.from(item, {
-            scrollTrigger: {trigger: item, start: 'top 88%'},
-            duration: 0.5, y: 20, opacity: 0, ease: 'power2.out', delay: i * 0.05,
-        });
-    });
-
-    // Experience items
+    // Experience — slide in from right with overshoot
     document.querySelectorAll('.experience-item').forEach((item, i) => {
         gsap.from(item, {
             scrollTrigger: {trigger: item, start: 'top 88%'},
-            duration: 0.5, y: 20, opacity: 0, ease: 'power2.out', delay: i * 0.05,
+            x: 30, autoAlpha: 0,
+            duration: 0.6, ease: 'back.out(1.3)', delay: i * 0.04,
         });
     });
 
-    // Skill tags stagger
+    // Portfolio — stagger with slight clockwise rotation
+    document.querySelectorAll('.portfolio-item').forEach((item, i) => {
+        gsap.from(item, {
+            scrollTrigger: {trigger: item, start: 'top 90%'},
+            y: 28, autoAlpha: 0, rotation: 1.5,
+            duration: 0.55, ease: 'power3.out', delay: i * 0.04,
+        });
+    });
+
+    // Skill tags — scale + rotate in
     document.querySelectorAll('.skills-group').forEach(group => {
         gsap.from(group.querySelectorAll('.skill-tag'), {
             scrollTrigger: {trigger: group, start: 'top 88%'},
-            duration: 0.35, scale: 0.85, opacity: 0, ease: 'back.out(1.4)', stagger: 0.05,
+            scale: 0.75, autoAlpha: 0, rotation: -4,
+            duration: 0.4, ease: 'back.out(2)', stagger: 0.04,
         });
     });
 
-    // Education
-    document.querySelectorAll('.education-item').forEach(item => {
+    // Education — fade up with slight rotation
+    document.querySelectorAll('.education-item').forEach((item, i) => {
         gsap.from(item, {
             scrollTrigger: {trigger: item, start: 'top 88%'},
-            duration: 0.5, y: 16, opacity: 0, ease: 'power2.out',
+            y: 20, autoAlpha: 0, rotation: 0.8,
+            duration: 0.5, ease: 'power3.out', delay: i * 0.06,
+        });
+    });
+
+    // 3D tilt on portfolio cards
+    document.querySelectorAll('.portfolio-item').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            gsap.to(card, {
+                rotateY: x * 10, rotateX: -y * 10,
+                transformPerspective: 700,
+                duration: 0.25, ease: 'power2.out', overwrite: 'auto',
+            });
+        });
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotateY: 0, rotateX: 0,
+                duration: 0.6, ease: 'elastic.out(1, 0.5)', overwrite: 'auto',
+            });
         });
     });
 }

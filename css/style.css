@@ -306,7 +306,6 @@ html[data-theme="dark"] .icon-sun {
     flex: 1;
     padding: 2.5rem 3rem;
     max-width: 800px;
-    opacity: 0;
 }
 
 /* ─── Sections ─────────────────────────────────────────────── */
@@ -701,7 +700,6 @@ html[data-theme="dark"] .icon-sun {
 
     .main {
         padding: 2rem 1.5rem;
-        opacity: 0;
     }
 }
 
@@ -803,4 +801,12 @@ html[data-theme="dark"] .icon-sun {
         color: #475569;
         background: none;
     }
+}
+
+/* Content is pre-rendered; hide until the GSAP intro takes over (see .js script in index.html) */
+@media screen {
+    .js .main { opacity: 0; }
+}
+@media screen and (min-width: 769px) {
+    .js .sidebar { clip-path: inset(0 100% 0 0); }
 }

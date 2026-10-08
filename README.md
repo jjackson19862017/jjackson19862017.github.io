@@ -7,7 +7,7 @@ Live at [jackoripo.uk](https://jackoripo.uk)
 ## Stack
 
 - Plain HTML, CSS, and JavaScript — no framework
-- Content driven by `cv.json`
+- Content driven by `cv.json`, pre-rendered into `index.html` by `build.mjs` (crawlers/ATS see real HTML, no JS needed)
 - [GSAP 3](https://greensock.com/gsap/) for animations
 - Hosted on GitHub Pages with a custom domain via Cloudflare
 
@@ -32,7 +32,7 @@ npx serve .
 
 ### Updating content
 
-Edit `cv.json` — all sections (experience, portfolio, skills, education, contact) are rendered from it at runtime.
+Edit `cv.json`, then run `node build.mjs` and commit the regenerated `index.html`. The rendered sections live between the `<!--b:id-->` markers in `index.html` — do not edit inside them by hand.
 
 ### Minifying JS
 

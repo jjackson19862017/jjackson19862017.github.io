@@ -2,7 +2,7 @@
   "profile": {
     "name": "Stephen James Jackson",
     "title": "Web Developer",
-    "summary": "Hi I am Stephen, a hard working and self-motivated web developer with over four years of commercial experience building, maintaining, and deploying websites and applications. Passionate about learning new technologies and solving problems independently. Currently looking to transition into a larger company to further develop my skills and broaden my knowledge. Outside of work, I actively maintain a home lab environment running Docker, Jellyfin, Home Assistant, and self-hosted services accessible via Cloudflare tunnels — driven by a genuine interest in infrastructure, networking, and continuous self-improvement.",
+    "summary": "Hi I am Stephen, a hard working and self-motivated web developer with over five years of commercial experience building, maintaining, and deploying websites and applications with Laravel, Livewire (3 years), Filament PHP (1 year), Statamic, and WordPress. Passionate about learning new technologies and solving problems independently. Currently looking to transition into a larger company to further develop my skills and broaden my knowledge. Outside of work, I actively maintain a home lab environment running Docker, Jellyfin, Home Assistant, and self-hosted services accessible via Cloudflare tunnels — driven by a genuine interest in infrastructure, networking, and continuous self-improvement.",
     "contact": {
       "email": "moc.duolci@8noskcajjs",
       "phone": "07555 966431",
@@ -16,10 +16,11 @@
       "title": "Web Developer",
       "dates": "June 2021 – Present",
       "bullets": [
-        "Set up, migrate, and monitor web hosting servers for multiple clients",
-        "Maintain and build new client websites, liaising directly with clients on requirements and providing training",
-        "Built a full Secret Santa application from scratch to replace the existing one",
+        "Manage 8 client websites end-to-end: building, maintaining, liaising directly with clients on requirements, and providing training",
+        "Built a full Secret Santa application from scratch in Filament PHP to replace the existing one",
         "Developing a combined time-keeping and project overview application",
+        "Set up and migrated 4 web hosting servers; maintain and monitor 5 servers for clients",
+        "Reduced routine housekeeping time from 4 hours to 1 hour",
         "Manage VPN, email, and network services across the business",
         "Provide technical support for colleagues including VPN setup, Mac troubleshooting, and managing backups for the office QNAP server",
         "Handle client support tickets end-to-end via email, phone, and video call"
@@ -57,10 +58,14 @@
     "Frameworks & CMS": [
       "Laravel",
       "Statamic",
+      "WordPress",
       "Filament PHP",
       "Livewire",
       "Tailwind CSS",
       "Alpine.js"
+    ],
+    "Databases": [
+      "MySQL"
     ],
     "Tools & Platforms": [
       "Git",
